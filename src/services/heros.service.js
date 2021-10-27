@@ -4,33 +4,15 @@ const { allHerosDB } = require('./../data/superheros')
 const getById = (req, res, next) => {
   const { id } = req.params,
     hero = allHerosDB.find(e => e.id === +id)
-  res.send(
-    hero
-      ? {
-          status: 200,
-          response: hero,
-        }
-      : { status: 404, response: [] }
-  )
+  res.status(hero ? 200 : 404).send(hero)
 }
 
 const getAllHeros = (req, res, next) => {
   const { fly } = req.query
   if (fly) {
     const heros = allHerosDB.filter(e => e.puedeVolar)
-    res.send(
-      heros.length > 0
-        ? {
-            status: 200,
-            response: heros,
-          }
-        : { status: 404, response: 'No data of heros fly' }
-    )
-  } else
-    res.send({
-      status: 200,
-      response: allHerosDB,
-    })
+    res.status(heros.length < 0 ? 404 : 200).send(heros)
+  } else res.status(200).send(allHerosDB)
 }
 
 const getFile = (req, res, next) => {
