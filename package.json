@@ -1,0 +1,21 @@
+{
+  "name": "centribal-api",
+  "version": "1.0.0",
+  "description": "api to list superheros",
+  "main": "server.js",
+  "repository": "https://github.com/Julio-Vasquez/centribal-api.git",
+  "author": "Julio Vasquez <Julio-Vasquez>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
