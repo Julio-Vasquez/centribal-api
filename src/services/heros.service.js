@@ -19,8 +19,8 @@ const getFile = (req, res, next) => {
   const { img } = req.params,
     path = __dirname.replace('services', `data/imgs`),
     url = existsSync(`${path}/${img}`)
-
-  res.sendFile(url ? path : `${path}/no_found.png`)
+  console.log(url)
+  res.sendFile(url ? `${path}/${img}` : `${path}/no_found.png`)
 }
 
 module.exports = { getById, getAllHeros, getFile }

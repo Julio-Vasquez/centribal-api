@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
-  res.staus(err.status || 500).send(err.message)
+  res.status(err.status || 500).send(err.message)
 })
 
 app.listen(PORT, () => console.log(`server running on port: ${PORT}`))
